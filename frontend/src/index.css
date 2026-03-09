@@ -1,0 +1,88 @@
+/* Reset & Base */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #f0f4ff;
+  --bg-card:    #ffffff;
+  --border:     #dde3f0;
+  --primary:    #5c6ef8;
+  --primary-d:  #4355e8;
+  --success:    #22c55e;
+  --danger:     #ef4444;
+  --warn:       #f59e0b;
+  --text:       #1e2235;
+  --text-muted: #6b7280;
+  --radius:     12px;
+  --shadow:     0 4px 24px rgba(92,110,248,0.12);
+  --shadow-sm:  0 2px 8px rgba(0,0,0,0.08);
+  font-family: 'Nunito', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+body { min-height: 100vh; }
+
+/* Typography  */
+h1, h2, h3 { font-family: 'Fredoka One', cursive; letter-spacing: 0.5px; }
+
+/*Utilities  */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+  user-select: none;
+}
+.btn:hover  { opacity: 0.9; transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-success { background: var(--success); color: #fff; }
+.btn-danger  { background: var(--danger);  color: #fff; }
+.btn-ghost   { background: transparent; border: 2px solid var(--border); color: var(--text); }
+.btn-lg      { padding: 14px 32px; font-size: 1.1rem; border-radius: 12px; }
+
+input, textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  background: var(--bg-card);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+input:focus, textarea:focus { border-color: var(--primary); }
+
+/*  Scrollbar */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* Animations */
+@keyframes slideUp   { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn    { from { opacity:0; } to { opacity:1; } }
+@keyframes bounceIn  { 0%{transform:scale(0.8);opacity:0} 60%{transform:scale(1.05)} 100%{transform:scale(1);opacity:1} }
+@keyframes pulse     { 0%,100%{opacity:1} 50%{opacity:0.6} }
+
+.animate-slide-up  { animation: slideUp  0.3s ease forwards; }
+.animate-fade-in   { animation: fadeIn   0.2s ease forwards; }
+.animate-bounce-in { animation: bounceIn 0.4s ease forwards; }
