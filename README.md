@@ -39,4 +39,5 @@ npm run dev        # vite dev server on :5173
 cd frontend && npm run build    # outputs to frontend/dist/
 cd backend && npm start         # NODE_ENV=production
 ```
+deploy-url:https://skribbl-frontend-dnng.onrender.com/
 
